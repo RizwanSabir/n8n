@@ -134,40 +134,6 @@ Replace the content with the following, updating `your_public_ip_address`, `your
 
 ```ini
 [Unit]
-Description=n8n service
-After=network.target
-
-[Service]
-Type=simple
-User=ubuntu
-ExecStart=/usr/bin/npm run start
-Environment=N8N_HOST=your_public_ip_address
-Environment=N8N_PORT=5678
-Environment=N8N_PROTOCOL=https
-Environment=N8N_BASIC_AUTH_ACTIVE=true
-Environment=N8N_BASIC_AUTH_USER=your_username
-Environment=N8N_BASIC_AUTH_PASSWORD=your_password
-Environment=N8N_SSL_KEY=/etc/n8n-certs/n8n-key.pem
-Environment=N8N_SSL_CERT=/etc/n8n-certs/n8n-cert.pem
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-### Restart the Service
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl restart n8n
-```
-
-Your n8n instance should now be running securely with HTTPS.
-
-Final n8n service file looks like
-
-```bash
-[Unit]
 Description=n8n workflow automation tool
 After=network.target
 
@@ -189,3 +155,12 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Restart the Service
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart n8n
+```
+
+Your n8n instance should now be running securely with HTTPS.
