@@ -138,16 +138,16 @@ Description=n8n workflow automation tool
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/n8n
+ExecStart=/usr/local/bin/n8n  // If the service is not successfully running because you are pointing to wrong n8n . Use which n8n
 User=ubuntu
 Environment=HOME=/home/ubuntu
 Environment=DATA_FOLDER=/home/ubuntu/.n8n
-Environment=N8N_HOST=51.21.127.196
+Environment=N8N_HOST=<Your-IP>
 Environment=N8N_PORT=5678
 Environment=N8N_PROTOCOL=https
 Environment=N8N_BASIC_AUTH_ACTIVE=true
-Environment=N8N_BASIC_AUTH_USER=rizwansabirawan
-Environment=N8N_BASIC_AUTH_PASSWORD=r$$izwan4321
+Environment=N8N_BASIC_AUTH_USER=<Your name>
+Environment=N8N_BASIC_AUTH_PASSWORD=<Your-Password>
 Environment=N8N_SSL_KEY=/etc/n8n-certs/n8n-key.pem
 Environment=N8N_SSL_CERT=/etc/n8n-certs/n8n-cert.pem
 Restart=always
