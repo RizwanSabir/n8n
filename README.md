@@ -166,7 +166,7 @@ Your n8n instance should now be running securely with HTTPS.
 
 Final n8n service file looks like
 
-```
+```bash
 [Unit]
 Description=n8n workflow automation tool
 After=network.target
